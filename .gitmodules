@@ -1,0 +1,3 @@
+[submodule "py360convert"]
+	path = py360convert
+	url = https://github.com/onemorebug/py360convert.git
