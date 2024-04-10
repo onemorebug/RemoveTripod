@@ -4,3 +4,6 @@
 [submodule "Invariant-TemplateMatching"]
 	path = Invariant-TemplateMatching
 	url = https://github.com/onemorebug/Invariant-TemplateMatching.git
+[submodule "Inpaint-Anything"]
+	path = Inpaint-Anything
+	url = https://github.com/onemorebug/Inpaint-Anything.git
