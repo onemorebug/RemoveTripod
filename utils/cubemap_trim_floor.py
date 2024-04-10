@@ -4,11 +4,9 @@ import cv2
 import argparse
 
 
-def slice_image(input_path, output_path, height):
+def slice_image(input_path, output_path):
 
     cubemap = cv2.imread(input_path)
-
-    # trimmed_img = np.zeros((1520, 1520, 3), dtype=np.uint8)
 
     trimmed_img = cubemap[3040:4560,1520:3040] # [y_from:y_to, x_from:x_to]
 

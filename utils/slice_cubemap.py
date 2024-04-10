@@ -1,7 +1,8 @@
 import cv2
 import argparse
 import os
-from py360convert import e2c
+# from py360convert import e2c
+from py360convert import py360convert as e2c
 
 def slice_image_folder(method, folder_path):
     cubemap_output_folder_name = "cubemaps"
