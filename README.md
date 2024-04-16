@@ -45,7 +45,7 @@ Download the model checkpoints provided in [Segment Anything](./segment_anything
     - ```shared-media/template```: template image for object localization
     - ```shared-media/mask/```: mask matching the template image 
     - ```original.jpg```: original equirectangular image with object to remove
-    
+    - ```inpainted/```: contains results (images, masks) from *Inpaint-Anything*
 - [main.py](main.py) contains the main function which starts the workflow to remove the object. It also contains the file paths which can be set there. 
 
 ### Usage from command line

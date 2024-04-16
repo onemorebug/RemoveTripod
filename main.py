@@ -57,7 +57,7 @@ if __name__ == '__main__':
     original_path = "shared-media/original.jpg"
     cubemap_path = "shared-media/cubemap.png"
     floortile_path = "shared-media/floortile.png"
-    floortile_inpainted_path = "shared-media/inpainted.png"
+    floortile_inpainted_path = "shared-media/inpainted_with_mask_2.png"
     cubemap_inpainted_path = "shared-media/cubemap_inpainted.png"
     final_equi_path = "shared-media/final.png"
 
@@ -82,13 +82,13 @@ if __name__ == '__main__':
     # inpaint tripod
     logging.info("Inpaint tripod...")
     command = [
-        "Inpaint-Anything/venv/Scripts/python.exe", "Inpaint-Anything/remove_anything.py",
+        "python", "Inpaint-Anything/remove_anything.py",
         "--input_img", floortile_path,
         "--coords_type", "key_in",
         "--point_coords", f"{location[0]}, {location[1]}",
         "--point_labels", "1",
         "--dilate_kernel_size", "15",
-        "--output_dir", "./results",
+        "--output_dir", "../shared-media/inpainted/",
         "--sam_model_type", "vit_h",
         "--sam_ckpt", "sam_vit_h_4b8939.pth",
         "--lama_config", "lama/configs/prediction/default.yaml",
