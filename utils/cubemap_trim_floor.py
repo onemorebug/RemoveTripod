@@ -8,7 +8,10 @@ def slice_image(input_path, output_path):
 
     cubemap = cv2.imread(input_path)
 
-    trimmed_img = cubemap[3040:4560,1520:3040] # [y_from:y_to, x_from:x_to]
+    # get width / height of one cube
+    cube_width = cubemap.shape[1] // 4
+
+    trimmed_img = cubemap[cube_width*2:cube_width*3,cube_width:cube_width*2]
 
     cv2.imwrite(output_path, trimmed_img)
 
