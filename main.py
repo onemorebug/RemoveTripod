@@ -1,8 +1,5 @@
-from utils import slice_cubemap
-
 from importlib import import_module
 import sys
-import os
 sys.path.append("Invariant-TemplateMatching")
 sys.path.append("Inpaint-Anything")
 
@@ -79,10 +76,7 @@ if __name__ == '__main__':
 
     # locate tripod
     logging.info("Locate tripod...")
-    # location = locate_tripod(floortile_path, tripod_template_path, tripod_mask_path)
-    _, _, location = template_matching.InvariantTM_rgbdiff(floortile_path, tripod_template_path, tripod_mask_path)
-    with open("shared-media/tripod_location.txt", "w") as file:
-        file.write(f"{location[0]} {location[1]}")
+    location = locate_tripod(floortile_path, tripod_template_path, tripod_mask_path)
     logging.info(f"Locating finished. Location: {location[0]} {location[1]}")
 
     # inpaint tripod
@@ -101,7 +95,6 @@ if __name__ == '__main__':
         "--lama_ckpt", "big-lama"
     ]
 
-    # inpaint_anything.main(floortile_path, location[0], location[1])
     try:
         subprocess.run(command)
     except Exception as e:
